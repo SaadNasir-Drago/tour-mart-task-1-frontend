@@ -1,46 +1,96 @@
-# Getting Started with Create React App
+## Setup Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Frontend Setup
 
-In the project directory, you can run:
+1. In a new terminal, navigate to your project root and create a React app:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```shellscript
+# From the project root
+npx create-react-app frontend --template typescript
+cd frontend
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Install required dependencies:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```shellscript
+npm install react-router-dom axios react-hook-form @hookform/resolvers yup react-quill react-hot-toast date-fns
+npm install -D tailwindcss postcss autoprefixer @tailwindcss/typography
+```
 
-### `npm run build`
+3. Initialize Tailwind CSS:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```shellscript
+npx tailwindcss init -p
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Copy the frontend files from the code project above into your frontend directory.
+5. Create a `.env` file in the frontend directory based on the `.env.example` file:
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```plaintext
+REACT_APP_API_URL=http://localhost:3001
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Start the frontend development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```shellscript
+npm start
+```
 
-## Learn More
+## Accessing the Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Backend API: [http://localhost:3001](http://localhost:3001)
+- Swagger Documentation: [http://localhost:3001/api-docs](http://localhost:3001/api-docs)
+- Frontend: [http://localhost:3000](http://localhost:3000)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Features
+
+### Backend
+
+- User authentication with JWT
+- CRUD operations for blog posts
+- Authorization checks for post editing/deletion
+- API documentation with Swagger
+
+
+### Frontend
+
+- User registration and login
+- Blog post listing and search
+- Rich text editing with React Quill
+- Form validation with react-hook-form and yup
+- Responsive design with Tailwind CSS
+- User profile page
+
+
+## Project Structure
+
+```plaintext
+blog-platform/
+├── backend/                # NestJS backend
+│   ├── src/
+│   │   ├── auth/           # Authentication module
+│   │   ├── posts/          # Posts module
+│   │   ├── users/          # Users module
+│   │   ├── app.module.ts
+│   │   └── main.ts
+│   ├── .env
+│   └── package.json
+│
+└── frontend/               # React frontend
+    ├── src/
+    │   ├── components/     # Reusable components
+    │   ├── contexts/       # Context providers
+    │   ├── pages/          # Page components
+    │   ├── services/       # API services
+    │   ├── App.tsx
+    │   └── index.tsx
+    ├── .env
+    └── package.json
+```
