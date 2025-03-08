@@ -3,32 +3,22 @@
 
 ### Frontend Setup
 
-1. In a new terminal, navigate to your project root and create a React app:
+1. In a new terminal, clone the frontend directory:
 
 
 ```shellscript
-# From the project root
-npx create-react-app frontend --template typescript
-cd frontend
+git clone <URL>
 ```
 
 2. Install required dependencies:
 
 
 ```shellscript
-npm install react-router-dom axios react-hook-form @hookform/resolvers yup react-quill react-hot-toast date-fns
-npm install -D tailwindcss postcss autoprefixer @tailwindcss/typography
+npm install
 ```
 
-3. Initialize Tailwind CSS:
-
-
-```shellscript
-npx tailwindcss init -p
-```
-
-4. Copy the frontend files from the code project above into your frontend directory.
-5. Create a `.env` file in the frontend directory based on the `.env.example` file:
+3. Copy the frontend files from the code project above into your frontend directory.
+4. Create a `.env` file in the frontend directory based on the `.env.example` file:
 
 
 ```plaintext
