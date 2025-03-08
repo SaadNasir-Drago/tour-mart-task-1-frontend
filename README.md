@@ -25,7 +25,7 @@ npm install
 REACT_APP_API_URL=http://localhost:3001
 ```
 
-6. Start the frontend development server:
+5. Start the frontend development server:
 
 
 ```shellscript
